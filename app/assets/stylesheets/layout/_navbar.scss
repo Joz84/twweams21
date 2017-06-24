@@ -5,7 +5,7 @@
   transition: all 0.3s ease;
   display: flex;
   height: 3em;
-  padding: 0 12em;
+  padding: 0 15em;
   align-items: center;
   justify-content: space-between;
 }
@@ -100,9 +100,10 @@
 }
 
 /* Navbar dropdown menu */
-#dropdown-bars {
-  filter:contrast(0);
+#dropdown-bars, .courrier {
+  width:1em;
 }
+
 
 .navbar-wagon-dropdown-menu {
   margin-top: 15px;

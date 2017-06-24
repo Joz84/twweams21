@@ -1,0 +1,125 @@
+// #profile-show.container {
+  // display: flex;
+  // justify-content: center;
+  // width:100vw;
+  // margin:0;
+
+#profile-show {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  width:100vw;
+  margin:0;
+  padding:0;
+
+  .persos-info-container {
+    display: flex;
+    flex-direction: row;
+    height:38vh;
+    width:100vw;
+
+    .profile-left {
+      display: flex;
+      flex-direction: row;
+      justify-content: space-between;
+      text-align: right;
+      padding:1em 1.5em;
+      height:100%;
+      width:45vw;
+      p {
+        margin:0;
+      }
+      h1 {
+        margin:0;
+        color:$dark-blue;
+        font-size: 1.6em;
+      }
+      #info-list{
+        display: flex;
+        flex-direction: column;
+        align-items: flex-end;
+        #birthday {
+          color:$pink;
+          font-size: 1.2em;
+          margin-top: -0.5em;
+          letter-spacing: 1px;
+        }
+
+        #location {
+          margin-top: -1.5em;
+          color:$dark-blue;
+        }
+      }
+
+      #profile-picture {
+        width:10em;
+        height:10em;
+        text-align: center;
+        box-shadow: 1px 1px 1px black;
+        #avatar {
+          width:2em;
+        }
+      }
+    }
+    .profile-right {
+      display: flex;
+      flex-direction: column;
+      height:100%;
+      width:55vw;
+      color:$dark-blue;
+
+      h2 {
+        font-size: 1em;
+        font-weight: bold;
+        margin:0.5em 0;
+      }
+      p {
+        width:65%;
+        font-size: 0.8em;
+        text-align: justify;
+        margin-bottom: 0.2em;
+      }
+
+      .profile-right-top {
+        padding:0.3em 1.5em 0;
+        height:55%;
+        background-color: #f2eddb;
+      }
+      .profile-right-bottom {
+        padding:0.3em 1.5em 0;
+        height:45%;
+      }
+      .women {
+        background-color: #f9ebf3;
+      }
+      .men {
+        background-color: #e2e4e6;
+      }
+    }
+  }
+  #separate-bar {
+    height:0.7vh;
+    width:100vw;
+    background-color: $dark-blue;
+    img {
+      position: absolute;
+      top:42.6vh;
+      left:49%;
+      width:2.2em;
+    }
+  }
+  .map {
+    height:55.03vh;
+    width:100vw;
+    background-color: black;
+  }
+}
+
+@media screen and (max-width:700px){
+  .profile-left {
+    width:100vw !important;
+  }
+  .profile-right {
+    display: none !important;
+  }
+}
