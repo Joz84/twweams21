@@ -17,18 +17,20 @@
   <div id="users-container">
     <div id="users-list">
       <% @users.each do |user| %>
-        <div class="profile-picture">
-          <%= image_tag 'elements/Avatar bleu-01.png', alt: 'avatar', id: "avatar"%>
-          <p class="username"><%= user.first_name? ? user.first_name : nil %> <%= user.last_name? ? user.last_name : nil %></p>
-          <p class="location"><%= user.city? ? (user.city+', ') : nil %><%= user.country? ? user.country[0..1] : nil %></p>
-          <% if user.gender? %>
-            <div class="add-line">
-              <%= link_to root_path do %>
-                <%= user.gender == 1 ? (image_tag 'elements/bouton-plus-bleu.png', alt: 'btn-plus-bleu',class:'add-btn') : (image_tag 'elements/bouton-plus-rose.png',alt: 'btn-plus-rose',class:'add-btn') %>
-              <% end %>
-            </div>
-          <% end %>
-        </div>
+        <%= link_to user do %>
+          <div class="profile-picture">
+            <%= image_tag 'elements/Avatar bleu-01.png', alt: 'avatar', id: "avatar"%>
+            <p class="username"><%= user.first_name? ? user.first_name : nil %> <%= user.last_name? ? user.last_name : nil %></p>
+            <p class="location"><%= user.city? ? (user.city+', ') : nil %><%= user.country? ? user.country[0..1] : nil %></p>
+            <% if user.gender? %>
+              <div class="add-line">
+                <%= link_to root_path do %>
+                  <%= user.gender == 1 ? (image_tag 'elements/bouton-plus-bleu.png', alt: 'btn-plus-bleu',class:'add-btn') : (image_tag 'elements/bouton-plus-rose.png',alt: 'btn-plus-rose',class:'add-btn') %>
+                <% end %>
+              </div>
+            <% end %>
+          </div>
+        <% end %>
       <% end %>
     </div>
     <div id="separate-bar">
@@ -38,9 +40,4 @@
 
     </div>
   </div>
-
-  <h1>Accueil : Bienvenu sur twweams, il y aura bientot la page d'accueil ici, en attendant, découvre la liste des users</h1>
-
-  <%= link_to 'Liste des utilisateurs',  users_path %>
-
 </div>

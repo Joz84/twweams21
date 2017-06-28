@@ -42,4 +42,7 @@
 
 * {
   font-family: 'Roboto', sans-serif !important;
+  &:hover {
+    text-decoration: none;
+  }
 }
