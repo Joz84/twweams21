@@ -13,7 +13,7 @@
       <div id="info-list">
         <h1 class="playfair"><%= @user.first_name? ? @user.first_name : nil %> <%= @user.last_name? ? @user.last_name : nil %></h1><br>
         <p id="birthday"><%= @user.birthday? ? (@user.birthday).strftime("%d/%m/%y") : nil %></p><br>
-        <p id="location"><%= @user.city? ? @user.city : nil %>, <%= @user.country? ? @user.country[0..1] : nil %></p>
+        <p id="location"><%= @user.city? ? (@user.city+', ') : nil %><%= @user.country? ? @user.country[0..1] : nil %></p>
         <%= link_to 'Messenger', root_path, id: 'messenger-btn', class: @user.gender? ? (@user.gender == 1 ? 'color-men' : 'color-women') : nil%>
       </div>
     </div>

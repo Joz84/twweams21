@@ -2,3 +2,145 @@
  * CSS code specific to home page
  * (margin/padding adjustments)
  * ------------------------------------- */
+#home-page {
+  #filters {
+    background-color: #606b79;
+    padding:2em 2em 1.5em;
+    width:100vw;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    flex-wrap: wrap;
+    #date-select {
+      margin-right: 2em;
+      height:2.3em;
+      select {
+        text-align: center;
+        background-color: #e9ebed;
+        border:0px solid transparent;
+        overflow: hidden;
+        outline: none;
+        border-radius: 0px;
+        margin:0 0.1em;
+        color:$dark-blue;
+        font-weight: bold;
+      }
+    }
+    #gender-box {
+      width: 14em;
+      height:2.3em;
+      margin-left: 2em;
+    }
+    input,label {
+      vertical-align: middle;
+      margin:0 0 0 0.5em;
+      color: #e9ebed;
+      font-weight: 400;
+    }
+  }
+  #find-container {
+    background-color: $dark-blue;
+    width:100vw;
+    #find-btn {
+      padding:0.3em 0.7em;
+      background-color: $blue;
+      width:8em;
+      text-align: center;
+      margin:0 auto;
+      color:white;
+      font-size: 1.2em;
+      -webkit-transition: 0.4s;
+      -o-transition: 0.4s;
+      transition: 0.4s;
+      &:hover{
+        filter:contrast(80%);
+      }
+    }
+  }
+  #users-container {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    #users-list {
+      background-color: $grey;
+      padding:2em 2em;
+      min-width: 25em;
+      max-width: 26em;
+      display: flex;
+      flex-wrap: wrap;
+      flex-direction: row;
+      justify-content: space-between;
+      .profile-picture {
+        margin-bottom: 1em;
+        width:10em;
+        height: 14em;
+        text-align: center;
+        background-color: white;
+        box-shadow: 1px 1px 3px rgba($gray,0.1);
+        padding:0.5em 0.5em 0.5em;
+        z-index: 9999;
+        #avatar {
+          padding-bottom: 0.5em;
+          width:9em;
+        }
+        p {
+          margin:0;
+          color:$dark-blue;
+          letter-spacing: 1px;
+        }
+        .username {
+          text-transform: uppercase;
+          font-weight: bolder;
+          font-size: 0.85em;
+        }
+        .location {
+          font-size: 0.7em;
+        }
+      }
+      .add-line {
+        width:10em;
+        margin-top:2.2em;
+        margin-left: -0.5em;
+        height:1vh;
+        background-color: $dark-blue;
+        position: absolute;
+        img {
+          position: absolute;
+          width:2.2em;
+          margin-top:-0.93em;
+          margin-left: -1.1em;
+        }
+      }
+    }
+    #map {
+      min-height: 20vh;
+      background-color: black;
+      width:100%;
+    }
+  }
+
+  #separate-bar {
+    display: none;
+  }
+}
+
+@media screen and (max-width:992px){
+  #home-page {
+    #separate-bar {
+      display: block !important;
+    }
+    #users-container {
+      flex-direction: column !important;
+      height:auto !important;
+    }
+    #users-list {
+      max-width: 100vw !important;
+    }
+    #gender-box {
+      margin-top: 2em;
+    }
+    #date-select {
+      margin-bottom: 2em;
+    }
+  }
+}

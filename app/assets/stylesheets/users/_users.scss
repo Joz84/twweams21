@@ -15,7 +15,6 @@
   .persos-info-container {
     display: flex;
     flex-direction: row;
-    height:38vh;
     width:100vw;
 
     .profile-left {
@@ -91,7 +90,6 @@
     .profile-right {
       display: flex;
       flex-direction: column;
-      height:100%;
       width:55vw;
       color:$dark-blue;
 
@@ -118,25 +116,18 @@
       }
     }
   }
-  #separate-bar {
-    height:0.7vh;
-    width:100vw;
-    background-color: $dark-blue;
-    img {
-      position: absolute;
-      top:42.6vh;
-      left:49%;
-      width:2.2em;
-    }
-  }
   .map {
-    height:55.03vh;
+    height:57.03vh;
     width:100vw;
     background-color: black;
   }
 }
 
 @media screen and (max-width:992px){
+  .persos-info-container {
+    flex-direction: column !important;
+    box-shadow: 1px 1px 10px 3px rgba($gray,0.1);
+  }
 
   .profile-left {
     width:100vw !important;
@@ -144,7 +135,13 @@
     padding:1em 1em;
   }
   .profile-right {
-    display: none !important;
+    width:100vw !important;
+    .profile-right-top, .profile-right-bottom {
+      padding-bottom: 0.5em !important;
+    }
+    p {
+      width:100% !important;
+    }
   }
   #messenger-btn {
     display: none !important;

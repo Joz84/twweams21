@@ -1,0 +1,14 @@
+<form oninput="output.value = Math.round(range.valueAsNumber / 1000)">
+  <div class="range">
+    <div id="distance">
+      <p>0 km</p>
+      <p>20000 km</p>
+    </div>
+    <input name="range" type="range" min="0" max="20000000">
+    <div class="range-output">
+      <output class="output" name="output" for="range">
+        10000
+      </output>
+    </div>
+  </div>
+</form>
