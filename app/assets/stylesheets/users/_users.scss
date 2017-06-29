@@ -25,6 +25,13 @@
       padding:1em 1.5em;
       height:100%;
       width:45vw;
+      background-image: image_url('elements/profil-bg.png');
+      background-size: 20em;
+      background-repeat: no-repeat;
+      -webkit-box-shadow: 7px 7px 35px -18px rgba(0,0,0,0.75);
+      -moz-box-shadow: 7px 7px 35px -18px rgba(0,0,0,0.75);
+      box-shadow: 7px 7px 35px -18px rgba(0,0,0,0.75);
+      z-index: 5;
       p {
         margin:0;
       }
@@ -74,14 +81,20 @@
         padding:0.5em 0.5em 1em;
         transform: rotateZ(-6deg);
         z-index: 9999;
-        margin:3em -1.5em 0 0;
+        margin:3em -2.5em 0 0;
         #avatar {
           width:9em;
+        }
+        #scotch {
+          position: absolute;
+          top:-0.9em;
+          left:40%;
+          width:2.5em;
         }
       }
       #birthday-icon {
         transform: rotateZ(4deg);
-        margin:6em -4em 0 0;
+        margin:5em -6em 0 0;
         img {
           width:7.5em;
         }
@@ -97,6 +110,7 @@
         font-size: 1em;
         font-weight: bold;
         margin:0.5em 0;
+        text-align: left;
       }
       p {
         width:65%;
@@ -133,9 +147,16 @@
     width:100vw !important;
     justify-content:center !important;
     padding:1em 1em;
+    background-position: 100% 60% !important;
   }
   .profile-right {
     width:100vw !important;
+    .profile-right-top {
+      -webkit-box-shadow: 7px 7px 35px -18px rgba(0,0,0,0.75);
+      -moz-box-shadow: 7px 7px 35px -18px rgba(0,0,0,0.75);
+      box-shadow: 7px 7px 35px -18px rgba(0,0,0,0.75);
+      z-index: 2;
+    }
     .profile-right-top, .profile-right-bottom {
       padding-bottom: 0.5em !important;
     }

@@ -19,7 +19,7 @@
       <% @users.each do |user| %>
         <%= link_to user do %>
           <div class="profile-picture">
-            <%= image_tag 'elements/Avatar bleu-01.png', alt: 'avatar', id: "avatar"%>
+            <%= user.gender == 1 ? (image_tag 'elements/Avatar bleu-01.png', alt: 'avatar', id: "avatar") : (image_tag 'elements/Avatar rose-01.png', alt: 'avatar', id: "avatar") %>
             <p class="username"><%= user.first_name? ? user.first_name : nil %> <%= user.last_name? ? user.last_name : nil %></p>
             <p class="location"><%= user.city? ? (user.city+', ') : nil %><%= user.country? ? user.country[0..1] : nil %></p>
             <% if user.gender? %>

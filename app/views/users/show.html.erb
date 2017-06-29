@@ -4,7 +4,8 @@
       <% @user.gender? ? (@gender = (@user.gender == 1 ) ? 'men' : 'women') : nil%>
 
       <div id="profile-picture">
-        <%= image_tag 'elements/Avatar bleu-01.png', alt: 'avatar', id: "avatar"%>
+        <%= image_tag 'elements/scotch.png', alt: 'scotch', id: "scotch"%>
+        <%= @user.gender == 1 ? (image_tag 'elements/Avatar bleu-01.png', alt: 'avatar', id: "avatar") : (image_tag 'elements/Avatar rose-01.png', alt: 'avatar', id: "avatar") %>
       </div>
       <div id="birthday-icon">
         <%= image_tag 'elements/birth-dates/01 JANV/0101.png', alt: 'birthday-icon' %>
