@@ -13,6 +13,5 @@ class UsersController < ApplicationController
       marker.lng user.longitude
       # marker.infowindow render_to_string(partial: "/flats/map_box", locals: { flat: flat })
     end
-
   end
 end
