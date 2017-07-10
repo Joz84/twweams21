@@ -138,7 +138,7 @@
 }
 
 
-#profile-show {
+#profile-show, #profile-edit {
   display: flex;
   justify-content: center;
   flex-direction: column;
@@ -157,7 +157,6 @@
       justify-content: flex-end;
       text-align: right;
       padding:1em 1.5em;
-      height:100%;
       width:45vw;
       background-image: image_url('elements/profil-bg.png');
       background-size: 20em;
@@ -189,7 +188,7 @@
           margin-top: -1.5em;
           color:$dark-blue;
         }
-        #messenger-btn {
+        #messenger-btn, .return-btn{
           padding:0.3em 0.7em;
           margin-top:6em;
           font-size: 1em;
@@ -199,10 +198,10 @@
           }
         }
         .color-men {
-          color:#e2e4e6;
+          color:#e2e4e6 !important;
         }
         .color-women {
-          color:#f9ebf3;
+          color:#f9ebf3 !important;
         }
       }
 
@@ -240,6 +239,119 @@
       width:55vw;
       color:$dark-blue;
 
+      // #buttons {
+      //   display: flex;
+      //   justify-content: flex-end;
+      //   flex-direction: row;
+      //   align-items: center;
+      //   margin-bottom: 1em;
+      #buttons {
+        display: flex;
+        justify-content: flex-end;
+        flex-direction: row;
+        align-items: center;
+        margin-bottom:1em;
+        width:100%;
+
+        .submit-btn {
+          input{
+            background-color: $dark-blue;
+            border:1px solid $dark-blue;
+            color:$grey;
+            border-radius: 0;
+            margin:0 0.3em;
+          }
+        }
+        .return-btn {
+          a {
+            padding:6.5px 12px;
+            border:1px solid $dark-blue;
+            background-color: $dark-blue;
+            color:$grey;
+            outline: none;
+            &:hover {
+              text-decoration: none;
+            }
+          }
+        }
+      }
+
+      @keyframes border {
+        0%{
+          border:2px solid transparent;
+          border-bottom: 2px solid rgba($dark-blue,0.7);
+        }
+        33%{
+          border:2px solid transparent;
+          border-bottom: 2px solid rgba($dark-blue,0.7);
+          border-left: 2px solid rgba($dark-blue,0.7);
+
+        }
+        66%{
+          border:2px solid transparent;
+          border-bottom: 2px solid rgba($dark-blue,0.7);
+          border-left: 2px solid rgba($dark-blue,0.7);
+          border-top: 2px solid rgba($dark-blue,0.7);
+        }
+        100%{
+          border:2px solid transparent;
+          border-bottom: 2px solid rgba($dark-blue,0.7);
+          border-left: 2px solid rgba($dark-blue,0.7);
+          border-top: 2px solid rgba($dark-blue,0.7);
+          border-right: 2px solid rgba($dark-blue,0.7);
+        }
+      }
+
+      .password-inputs {
+        display: flex;
+        flex-direction: row;
+        margin-top: 1em;
+        justify-content: space-between;
+        width:90%;
+
+        input{
+          background-color: transparent;
+          border:2px solid transparent;
+          border-bottom: 2px solid rgba($dark-blue,0.7);
+          box-shadow:none;
+          &:focus {
+            animation:border 0.6s forwards;
+          }
+        }
+      }
+
+      .favorite-inputs {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+        margin:0.3em 0;
+
+        .form-group {
+          margin:0;
+        }
+
+        input,textarea{
+          width:40vw;
+          max-width: 40vw;
+          font-weight: 400;
+          font-style: normal;
+          background-color: transparent;
+          border:2px solid transparent;
+          border-bottom: 2px solid rgba($dark-blue,0.7);
+          box-shadow:none;
+          -webkit-transition: 0.3s ease-in;
+          -o-transition: 0.3s ease-in;
+          transition: 0.3s ease-in;
+          &:focus {
+            animation:border 0.6s forwards;
+          }
+        }
+        h2, p {
+          width:auto;
+          margin-left: 1em;
+        }
+      }
       h2 {
         font-size: 1em;
         font-weight: bold;
@@ -251,6 +363,9 @@
         font-size: 0.8em;
         text-align: justify;
         margin-bottom: 0.2em;
+      }
+      #profile-edit.profile-right-top{
+        padding:0.5em 1.5em !important;
       }
 
       .profile-right-top {
@@ -272,6 +387,9 @@
 
 @media screen and (max-width:992px){
   #users-index {
+    #buttons {
+      justify-content: center !important;
+    }
     #filters {
       flex-direction: column !important;
     }

@@ -5,7 +5,9 @@
 
       <div id="profile-picture">
         <%= image_tag 'elements/scotch.png', alt: 'scotch', id: "scotch"%>
-        <%= @user.gender == 'male' ? (image_tag 'elements/Avatar bleu-01.png', alt: 'avatar', id: "avatar") : (image_tag 'elements/Avatar rose-01.png', alt: 'avatar', id: "avatar") %>
+        <%= link_to edit_user_registration_path do %>
+          <%= @user.gender == 'male' ? (image_tag 'elements/Avatar bleu-01.png', alt: 'avatar', id: "avatar") : (image_tag 'elements/Avatar rose-01.png', alt: 'avatar', id: "avatar") %>
+        <% end %>
       </div>
       <div id="birthday-icon">
         <%= image_tag 'elements/birth-dates/01 JANV/0101.png', alt: 'birthday-icon' %>
@@ -25,9 +27,9 @@
       </div>
       <div class="profile-right-bottom <%= @gender %>">
         <h2><b>Preferences</b></h2>
-        <p>Favorite movie : <b><em><%= @user.movie %></em></b></p>
-        <p>Favorite music : <b><em><%= @user.music %></em></b></p>
-        <p>Favorite book : <b><em><%= @user.book %></em></b></p>
+        <p>Favorite movie : <b><em><%= @user.movie? ? @user.movie : 'No content' %></em></b></p>
+        <p>Favorite music : <b><em><%= @user.music? ? @user.music : 'No content' %></em></b></p>
+        <p>Favorite book : <b><em><%= @user.book? ? @user.book : 'No content' %></em></b></p>
       </div>
     </div>
   </div>

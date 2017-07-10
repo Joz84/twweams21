@@ -24,10 +24,10 @@
     <%= f.input :email, required: true %>
     <%= f.input :password, required: true, hint: ("#{@minimum_password_length} characters minimum" if @minimum_password_length) %>
     <%= f.input :password_confirmation, required: true %>
-    <%= f.input :bio, required: true %>
-    <%= f.input :book, required: true %>
-    <%= f.input :movie, required: true %>
-    <%= f.input :music, required: true %>
+    <%= f.input :bio, placeholder: 'Ex: Je suis génial !' %>
+    <%= f.input :book, placeholder: "Ex: Le crime de l'Orient Express, Titeuf, ..." %>
+    <%= f.input :movie, placeholder: 'Ex: Harry Potter, Lord Of The Rings, ...' %>
+    <%= f.input :music, placeholder: 'Ex: Daft Punk, RadioHead, ...' %>
 
     <div class="form-actions">
       <%= f.button :submit, "Sign up", style: 'width: 100%;' %>
