@@ -1,60 +1,6 @@
-<div id="home-page">
-  <div id="filters">
-    <div id="date-select">
-      <%= date_select :birthday, {order: [:year, :month, :day]}, {start_year: Time.now.year, end_year: Time.now.year - 100}, {required: true} %>
-    </div>
-    <%= render 'cursor-range' %>
-    <div id="gender-box">
-      <%= radio_button_tag(:gender, "male") %>
-      <%= label_tag(:gender_male, "Male") %>
-      <%= radio_button_tag(:gender, "female") %>
-      <%= label_tag(:gender_female, "Female") %>
-    </div>
-  </div>
-  <div id="find-container">
-    <h1 id="find-btn">FIND</h1>
-  </div>
-  <div id="users-container">
-    <div id="users-list">
-      <% @users.each do |user| %>
-        <%= link_to user do %>
-          <div class="profile-picture">
-            <%= user.gender == 1 ? (image_tag 'elements/Avatar bleu-01.png', alt: 'avatar', id: "avatar") : (image_tag 'elements/Avatar rose-01.png', alt: 'avatar', id: "avatar") %>
-            <p class="username"><%= user.first_name? ? user.first_name : nil %> <%= user.last_name? ? user.last_name : nil %></p>
-            <p class="location"><%= user.city? ? (user.city+', ') : nil %><%= user.country? ? user.country[0..1] : nil %></p>
-            <% if user.gender? %>
-              <div class="add-line">
-                <%= link_to root_path do %>
-                  <%= user.gender == 1 ? (image_tag 'elements/bouton-plus-bleu.png', alt: 'btn-plus-bleu',class:'add-btn') : (image_tag 'elements/bouton-plus-rose.png',alt: 'btn-plus-rose',class:'add-btn') %>
-                <% end %>
-              </div>
-            <% end %>
-          </div>
-        <% end %>
-      <% end %>
-    </div>
-    <div id="separate-bar">
-      <%= image_tag 'elements/picto carte-01.png', alt: 'map' %>
-    </div>
-    <div id="map"></div>
 
-    <% content_for(:after_js) do %>
-      <%= javascript_tag do %>
-        $(document).ready(function() {
-          var handler = Gmaps.build('Google');
-          handler.buildMap({ internal: { id: 'map' } }, function() {
-            markers = handler.addMarkers(<%= raw @hash.to_json %>);
-            handler.bounds.extendWith(markers);
-            handler.fitMapToBounds();
-            if (markers.length == 0) {
-              handler.getMap().setZoom(2);
-            } else if (markers.length == 1) {
-              handler.getMap().setZoom(14);
-            }
-          });
-        });
-
-      <% end %>
-    <% end %>
-  </div>
-</div>
+<h3>Rentre ta date de naissance</h3>
+  <%= simple_form_for :birthday, url: birthday_path, method: :get do |f| %>
+  <%= f.input :birthdate, as: :date, start_year: Date.today.year - 110, end_year: Date.today.year, label: false %>
+  <%= f.button :submit, 'Go!', style: "width: 100%;" %>
+<% end %>

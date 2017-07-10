@@ -1,33 +1,33 @@
 <div class="container" id="profile-show">
   <div class="persos-info-container">
     <div class="profile-left">
-      <% @user.gender? ? (@gender = (@user.gender == 1 ) ? 'men' : 'women') : nil%>
+      <% @gender = @user.gender == 'male' ? 'men' : 'women' %>
 
       <div id="profile-picture">
         <%= image_tag 'elements/scotch.png', alt: 'scotch', id: "scotch"%>
-        <%= @user.gender == 1 ? (image_tag 'elements/Avatar bleu-01.png', alt: 'avatar', id: "avatar") : (image_tag 'elements/Avatar rose-01.png', alt: 'avatar', id: "avatar") %>
+        <%= @user.gender == 'male' ? (image_tag 'elements/Avatar bleu-01.png', alt: 'avatar', id: "avatar") : (image_tag 'elements/Avatar rose-01.png', alt: 'avatar', id: "avatar") %>
       </div>
       <div id="birthday-icon">
         <%= image_tag 'elements/birth-dates/01 JANV/0101.png', alt: 'birthday-icon' %>
       </div>
 
       <div id="info-list">
-        <h1 class="playfair"><%= @user.first_name? ? @user.first_name : nil %> <%= @user.last_name? ? @user.last_name : nil %></h1><br>
-        <p id="birthday"><%= @user.birthday? ? (@user.birthday).strftime("%d/%m/%y") : nil %></p><br>
-        <p id="location"><%= @user.city? ? (@user.city+', ') : nil %><%= @user.country? ? @user.country[0..1] : nil %></p>
-        <%= link_to 'Messenger', root_path, id: 'messenger-btn', class: @user.gender? ? (@user.gender == 1 ? 'color-men' : 'color-women') : nil%>
+        <h1 class="playfair"><%= @user.full_name %></h1><br>
+        <p id="birthday"><%= @user.birthday.strftime("%d/%m/%y") %></p><br>
+        <p id="location"><%= @user.location %></p>
+        <%= link_to 'Messenger', root_path, id: 'messenger-btn', class: @user.gender == 'male' ? 'color-men' : 'color-women' %>
       </div>
     </div>
     <div class="profile-right">
       <div class="profile-right-top">
-        <h2>About <%= @user.first_name? ? @user.first_name : nil %></h2>
-        <p><%= @user.bio? ? @user.bio : nil %></p>
+        <h2>About <%= @user.first_name %></h2>
+        <p><%= @user.summary %></p>
       </div>
       <div class="profile-right-bottom <%= @gender %>">
         <h2><b>Preferences</b></h2>
-        <p>Favorite movie : <b><em><%= @user.movie? ? @user.movie : nil %></em></b></p>
-        <p>Favorite music : <b><em><%= @user.music? ? @user.music : nil %></em></b></p>
-        <p>Favorite book : <b><em><%= @user.book? ? @user.book : nil %></em></b></p>
+        <p>Favorite movie : <b><em><%= @user.movie %></em></b></p>
+        <p>Favorite music : <b><em><%= @user.music %></em></b></p>
+        <p>Favorite book : <b><em><%= @user.book %></em></b></p>
       </div>
     </div>
   </div>
@@ -35,22 +35,6 @@
     <%= image_tag 'elements/picto carte-01.png', alt: 'map' %>
   </div>
   <div id="map"></div>
-
-  <% content_for(:after_js) do %>
-    <%= javascript_tag do %>
-      $(document).ready(function() {
-        var handler = Gmaps.build('Google');
-        handler.buildMap({ internal: { id: 'map' } }, function() {
-          markers = handler.addMarkers(<%= raw @hash.to_json %>);
-          handler.bounds.extendWith(markers);
-          handler.fitMapToBounds();
-          if (markers.length == 0) {
-            handler.getMap().setZoom(2);
-          } else if (markers.length == 1) {
-            handler.getMap().setZoom(14);
-          }
-        });
-      });
-    <% end %>
-  <% end %>
 </div>
+
+<%= render 'shared/map' %>

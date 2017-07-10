@@ -1,18 +1,29 @@
 class PagesController < ApplicationController
-  skip_before_action :authenticate_user!, only: [:home]
-  def home
-    @users = User.all
+  skip_before_action :authenticate_user!, only: [:home, :birthday]
 
-    @hash = Gmaps4rails.build_markers(@users) do |user, marker|
-      marker.lat user.latitude
-      marker.lng user.longitude
-      marker.picture({
-          "url": "#{view_context.image_path(@gender_icon = (user.gender == 1 ? 'elements/point-bleu-01.png' : 'elements/point-rose-01.png'))}",
-          "width":  24,
-          "height": 45
-        })
-      # marker.picture view_context.image_path(@gender_icon = (user.gender == 1 ? 'elements/point-bleu-01.png' : 'elements/point-rose-01.png'))
-      # marker.infowindow render_to_string(partial: "/flats/map_box", locals: { flat: flat })
-    end
+  def birthday
+    session[:birthday] = User.birthdate(datetime_params)
+    redirect_to new_user_registration_path
+  end
+
+  def home
+  end
+
+  def selection
+    session[:birthday] = User.birthdate(selection_params)
+    session[:length] = params[:length].to_i
+    session[:male] = selection_params[:male]
+    session[:female] = selection_params[:female]
+    redirect_to root_path
+  end
+
+  private
+
+  def datetime_params
+    params.require(:birthday).permit(:birthdate)
+  end
+
+  def selection_params
+    params.require(:selection).permit(:birthdate, :male, :female)
   end
 end
