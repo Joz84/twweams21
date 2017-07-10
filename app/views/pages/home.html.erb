@@ -1,6 +1,8 @@
-
-<h3>Rentre ta date de naissance</h3>
-  <%= simple_form_for :birthday, url: birthday_path, method: :get do |f| %>
-  <%= f.input :birthdate, as: :date, start_year: Date.today.year - 110, end_year: Date.today.year, label: false %>
-  <%= f.button :submit, 'Go!', style: "width: 100%;" %>
-<% end %>
+<div id="pages-home">
+  <div id="birthday-select">
+    <%= simple_form_for :birthday, url: birthday_path, method: :get do |f| %>
+      <%= f.input :birthdate, as: :date, start_year: Date.today.year - 110, end_year: Date.today.year, label: false %>
+      <%= f.button :submit, 'Go !', id:"go-btn" %>
+    <% end %>
+  </div>
+</div>

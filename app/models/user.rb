@@ -36,7 +36,7 @@ class User < ApplicationRecord
   end
 
   def summary
-    bio ? "#{bio[0..100]} ..." : "No comment"
+    bio ? "#{bio[0..100]}" : "No content"
   end
 
   def location
@@ -49,4 +49,5 @@ class User < ApplicationRecord
     day = params["birthdate(3i)"].to_i
     DateTime.new(year, month, day, 0, 0, 0, "+00:00")
   end
+
 end
