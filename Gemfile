@@ -31,7 +31,12 @@ gem "geocoder"
 gem "coffee-rails"
 gem "gmaps4rails"
 gem 'country_select'
+gem 'cloudinary'
+gem 'attachinary'
+gem 'jquery-fileupload-rails'
+
 
 source 'https://rails-assets.org' do
   gem "rails-assets-underscore"
 end
+
