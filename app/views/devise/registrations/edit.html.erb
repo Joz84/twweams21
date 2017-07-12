@@ -5,10 +5,11 @@
 
       <div id="profile-picture">
         <%= image_tag 'elements/scotch.png', alt: 'scotch', id: "scotch"%>
-        <%= @user.gender == 'male' ? (image_tag 'elements/Avatar bleu-01.png', alt: 'avatar', id: "avatar") : (image_tag 'elements/Avatar rose-01.png', alt: 'avatar', id: "avatar") %>
+        <%= @user.gender == 'male' ? (image_tag 'elements/Avatar bleu-01.png', alt: 'avatar', class: "avatar-profile") : (image_tag 'elements/Avatar rose-01.png', alt: 'avatar', class: "avatar-profile") %>
       </div>
       <div id="birthday-icon">
-        <%= image_tag 'elements/birth-dates/01 JANV/0101.png', alt: 'birthday-icon' %>
+        <% @date = 'elements/birth-dates/'+@user.birthday.strftime("%m")+"/"+@user.birthday.strftime("%d%m")+'.png' %>
+        <%= image_tag @date, alt: 'birthday-icon' %>
       </div>
 
       <div id="info-list">

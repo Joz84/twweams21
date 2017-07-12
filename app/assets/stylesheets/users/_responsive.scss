@@ -1,6 +1,18 @@
-
 @media screen and (max-width:992px){
+  #form-navbar {
+    display: none;
+  }
+  .range-slider__value {
+    position: relative;
+    margin-top:8px;
+  }
   #users-index {
+    #map {
+      min-height: 40vh !important;
+    }
+    #form-responsive {
+      display: block !important;
+    }
     #buttons {
       justify-content: center !important;
     }

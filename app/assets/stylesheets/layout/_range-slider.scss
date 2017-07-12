@@ -5,7 +5,7 @@ $shade-0: #fff !default;
 $teal: #1abc9c !default;
 
 // Range Slider
-$range-width: 18em !default;
+$range-width: 15em !default;
 
 $range-handle-color: $dark-blue !default;
 $range-handle-color-hover: $blue !default;
@@ -50,17 +50,19 @@ $range-label-width: 60px !default;
     width: $range-handle-size;
     height: $range-handle-size;
     border-radius: 50%;
-    background: $range-handle-color;
+    background: $blue;
     cursor: pointer;
     transition: background .15s ease-in-out;
 
     &:hover {
-      background: $range-handle-color-hover;
+      background: $dark-blue;
+      border:1px solid $grey;
     }
   }
 
   &:active::-webkit-slider-thumb {
-    background: $range-handle-color-hover;
+    background: $dark-blue;
+    border:1px solid $grey;
   }
 
   &::-moz-range-thumb {
@@ -68,17 +70,20 @@ $range-label-width: 60px !default;
     height: $range-handle-size;
     border: 0;
     border-radius: 50%;
-    background: $range-handle-color;
+    background: $blue;
     cursor: pointer;
     transition: background .15s ease-in-out;
 
     &:hover {
-      background: $range-handle-color-hover;
+      background: $dark-blue;
+      border:1px solid $grey;
     }
   }
 
   &:active::-moz-range-thumb {
-    background: $range-handle-color-hover;
+    background: $dark-blue;
+    border:1px solid $grey;
+
   }
 }
 
@@ -86,15 +91,14 @@ $range-label-width: 60px !default;
 // Range Label
 .range-slider__value {
   display: inline-block;
-  position: relative;
-  color: $shade-0;
+  position: absolute;
+  color: $dark-blue;
   line-height: 20px;
   text-align: center;
   border-radius: 3px;
-  background: $range-label-color;
+  background: $grey;
   padding: 5px 10px;
-  margin-top: 8px;
-
+  top:4px;
   // &:after {
   //   position: absolute;
   //   top: 8px;

@@ -1,19 +1,21 @@
 <div id="users-index">
-  <%= simple_form_for :selection, url: selection_path, method: :get do |f| %>
-    <div id="filters">
-      <div id="date-select">
-        <%= f.input :birthdate, as: :date, start_year: Date.today.year - 110, end_year: Date.today.year, label: false, selected: @birthday %>
+  <div id="form-responsive">
+    <%= simple_form_for :selection, url: selection_path, method: :get do |f| %>
+      <div id="filters">
+        <div id="date-select">
+          <%= f.input :birthdate, as: :date, start_year: Date.today.year - 110, end_year: Date.today.year, label: false, selected: @birthday %>
+        </div>
+        <%= render 'range' %>
+        <div id="gender-box">
+          <%= f.input :male, as: :boolean, class: "margin-zero" %>
+          <%= f.input :female, as: :boolean, class: "margin-zero" %>
+        </div>
       </div>
-      <%= render 'range' %>
-      <div id="gender-box">
-        <%= f.input :male, as: :boolean, class: "margin-zero" %>
-        <%= f.input :female, as: :boolean, class: "margin-zero" %>
+      <div id="find-container">
+        <h1 id="find-btn"><%= f.button :submit, 'FIND' %></h1>
       </div>
-    </div>
-    <div id="find-container">
-      <h1 id="find-btn"><%= f.button :submit, 'FIND' %></h1>
-    </div>
-  <% end %>
+    <% end %>
+  </div>
 
   <div id="users-container">
     <div id="users-list">
