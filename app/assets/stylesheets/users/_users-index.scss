@@ -73,7 +73,7 @@
     display: flex;
     flex-direction: row;
     justify-content: flex-start;
-    min-height: 75.5vh;
+    min-height: 71vh;
     #users-list {
       background-color: $grey;
       padding:2em 2em;
@@ -127,7 +127,6 @@
       }
     }
     #map {
-      min-height: 50vh;
       width:100%;
     }
   }

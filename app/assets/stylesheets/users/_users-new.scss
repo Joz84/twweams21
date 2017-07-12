@@ -1,6 +1,10 @@
 .users-new {
   height:93vh;
-  background-color:rgba($blue,0.1);
+  // background-color:rgba($blue,0.1);
+  background-image: image-url('bg-home-02.jpg');
+  background-size: cover;
+  background-position: bottom;
+  background-repeat: no-repeat;
   padding-top: 1em;
 
   #form {
