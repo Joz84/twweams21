@@ -36,7 +36,7 @@ class User < ApplicationRecord
   end
 
   def summary
-    bio ? "#{bio[0..100]}" : "No content"
+    bio ? "#{bio[0..100]}#{"..." if bio.size > 100}" : "No content"
   end
 
   def location
