@@ -19,30 +19,3 @@ module UserHelper
     end
   end
 end
-# #   def default_photo_path
-# #     if current_user == @user
-# #           <%= link_to edit_user_registration_path do %>
-# #             if @user.photo?
-# #               <%= cl_image_tag @user.photo.path, id: "avatar", crop: :fill %>
-# #             else
-# #               <%= @user.gender == 'male' ? (image_tag 'elements/Avatar bleu-01.png', alt: 'avatar', id: "avatar") : (image_tag 'elements/Avatar rose-01.png', alt: 'avatar', id: "avatar") %>
-# #             end
-# #           end
-# #         else
-
-# #         end
-# #   end
-# # end
-
-
-
-
-# if @user.photo?
-#   @user.photo.path
-# elsif @user.gender == 'male'
-#   'elements/Avatar bleu-01.png'
-# else
-#   'elements/Avatar rose-01.png'
-
-# 'elements/Avatar bleu-01.png'
-# <%= cl_image_tag @user.default_photo_path, alt: 'avatar', id: "avatar" %>
