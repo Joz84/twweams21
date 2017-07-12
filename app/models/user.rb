@@ -5,6 +5,8 @@ class User < ApplicationRecord
          :recoverable, :rememberable, :trackable, :validatable
 
   geocoded_by :city
+  has_attachment :photo
+
   after_validation :geocode, if: :city_changed?
 
   enum gender: [ :male, :female ]
