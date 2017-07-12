@@ -10,7 +10,7 @@ class UsersController < ApplicationController
       marker.lat user.latitude
       marker.lng user.longitude
       marker.picture({
-          "url": "#{view_context.image_path(@gender_icon = (user.gender == 'male' ? 'elements/point-bleu-01.png' : 'elements/point-rose-01.png'))}",
+          "url": "#{view_context.image_path(@gender_icon = (user.gender == 'male' ? 'elements/Point-bleu-01.png' : 'elements/Point-rose-01.png'))}",
           "width":  24,
           "height": 45
         })
@@ -26,7 +26,7 @@ class UsersController < ApplicationController
       marker.lat user.latitude
       marker.lng user.longitude
       marker.picture({
-          "url": "#{view_context.image_path(@gender_icon = (user.gender == 'male' ? 'elements/point-bleu-01.png' : 'elements/point-rose-01.png'))}",
+          "url": "#{view_context.image_path(@gender_icon = (user.gender == 'male' ? 'elements/Point-bleu-01.png' : 'elements/Point-rose-01.png'))}",
           "width":  24,
           "height": 45
         })
