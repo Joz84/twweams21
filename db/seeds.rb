@@ -6,7 +6,7 @@
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
 
-u0 =  User.create(email: "admin@gmail.com", password: "azerty", first_name: 'Super', last_name: 'Admin', birthday: '19/08/1998', gender: "male", city: 'Bordeaux', country: 'FRANCE')
-u1 =  User.create(email: "a@gmail.com", password: "azerty", first_name: 'Alice', last_name: 'Wonder', birthday: '05/06/1999', gender: "female", city: 'Pessac', country: 'FRANCE')
-u2 =  User.create(email: "b@gmail.com", password: "azerty", first_name: 'Boby', last_name: 'Bricoleur', birthday: '23/06/1962', gender: "male", city: 'Liverpool', country: 'ANGLETERRE')
-u3 =  User.create(email: "c@gmail.com", password: "azerty", first_name: 'Coco', last_name: 'Castor', birthday: '27/01/1957', gender: "female", city: 'Hanoi', country: 'VIETNAM')
+u0 =  User.create(email: "admin@gmail.com", password: "azerty", first_name: 'Super', last_name: 'Admin', birthday: '19/08/1998', gender: "male", city: 'Bordeaux', country: 'France')
+u1 =  User.create(email: "a@gmail.com", password: "azerty", first_name: 'Alice', last_name: 'Wonder', birthday: '05/06/1999', gender: "female", city: 'Pessac', country: 'France')
+u2 =  User.create(email: "b@gmail.com", password: "azerty", first_name: 'Boby', last_name: 'Bricoleur', birthday: '23/06/1962', gender: "male", city: 'Liverpool', country: 'Angleterre')
+u3 =  User.create(email: "c@gmail.com", password: "azerty", first_name: 'Coco', last_name: 'Castor', birthday: '27/01/1957', gender: "female", city: 'Hanoi', country: 'Vietnam')
