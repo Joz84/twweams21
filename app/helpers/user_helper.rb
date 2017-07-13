@@ -5,9 +5,9 @@ module UserHelper
 
   def default_image_tag(user)
     if user.photo?
-      cl_image_tag user.photo.path, id: "avatar", crop: :fill
+      cl_image_tag user.photo.path, class: "avatar-profile", crop: :fill
     else
-      image_tag gender_photo_path(user), alt: 'avatar', id: "avatar"
+      image_tag gender_photo_path(user), alt: 'avatar', class: "avatar-profile"
     end
   end
 

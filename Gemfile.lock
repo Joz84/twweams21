@@ -232,7 +232,6 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
-  activerecord
   attachinary
   autoprefixer-rails
   better_errors
