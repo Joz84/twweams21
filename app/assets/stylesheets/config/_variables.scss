@@ -8,17 +8,13 @@ $base-font: "Open Sans", "Helvetica", "sans-serif";
 $header-font: "Raleway", "Helvetica", "sans-serif";
 
 .playfair {
-  font-family: 'Playfair Display', serif;
+  font-family: 'Playfair Display', serif !important;
 }
 
-.roboto {
-  font-family: 'Roboto', sans-serif;
-}
-
-.women {
+.female {
   background-color: #f9ebf3;
 }
-.men {
+.male {
   background-color: #e2e4e6;
 }
 

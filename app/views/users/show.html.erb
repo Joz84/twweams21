@@ -1,14 +1,13 @@
 <div class="container" id="profile-show">
   <div class="persos-info-container">
     <div class="profile-left">
-      <% @gender = @user.gender == 'male' ? 'men' : 'women' %>
 
       <div id="profile-picture">
         <%= image_tag 'elements/scotch.png', alt: 'scotch', id: "scotch"%>
         <%= link_to_edit(@user, default_image_tag( @user )) %>
       </div>
       <div id="birthday-icon">
-        <%= image_tag 'elements/birth-dates/01 JANV/0101.png', alt: 'birthday-icon' %>
+        <%= image_tag date_photo_path(@user), alt: 'birthday-icon' %>
       </div>
 
       <div id="info-list">
@@ -23,7 +22,7 @@
         <h2>About <%= @user.first_name %></h2>
         <p><%= @user.summary %></p>
       </div>
-      <div class="profile-right-bottom <%= @gender %>">
+      <div class="profile-right-bottom <%= @user.gender %>">
         <h2><b>Preferences</b></h2>
         <p>Favorite movie : <b><em><%= @user.movie? ? @user.movie : 'No content' %></em></b></p>
         <p>Favorite music : <b><em><%= @user.music? ? @user.music : 'No content' %></em></b></p>

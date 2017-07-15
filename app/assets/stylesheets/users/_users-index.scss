@@ -8,21 +8,23 @@
     justify-content: center;
     #date-select{
       margin-right: 2em;
+      .form-inline {
       display: flex;
       justify-content: center;
       flex-direction: row;
       flex-wrap: nowrap;
       align-items: center;
       align-self: center;
-      select {
-        text-align: center;
-        background-color: #e9ebed;
-        border:0px solid transparent;
-        overflow: hidden;
-        outline: none;
-        border-radius: 0px;
-        margin:0 0.1em;
-        color:$dark-blue;
+        select {
+          text-align: center;
+          background-color: #e9ebed;
+          border:0px solid transparent;
+          overflow: hidden;
+          outline: none;
+          border-radius: 0px;
+          margin:0 0.1em;
+          color:$dark-blue;
+        }
       }
     }
     #gender-box {
@@ -73,7 +75,7 @@
     display: flex;
     flex-direction: row;
     justify-content: flex-start;
-    min-height: 71vh;
+    height:100%;
     #users-list {
       background-color: $grey;
       padding:2em 2em;
@@ -128,7 +130,12 @@
     }
     #map {
       width:100%;
+      min-height:90vh;
     }
+  }
+
+  #form-responsive {
+    display: none;
   }
 
   #separate-bar {
