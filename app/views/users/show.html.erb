@@ -7,8 +7,7 @@
         <%= link_to_edit(@user, default_image_tag( @user )) %>
       </div>
       <div id="birthday-icon">
-        <% @date = 'elements/birth-dates/'+@user.birthday.strftime("%m")+"/"+@user.birthday.strftime("%d%m")+'.png' %>
-        <%= image_tag @date, alt: 'birthday-icon' %>
+        <%= image_tag date_photo_path(@user), alt: 'birthday-icon' %>
       </div>
 
       <div id="info-list">

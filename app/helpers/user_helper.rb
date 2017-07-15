@@ -18,4 +18,8 @@ module UserHelper
       image_tag
     end
   end
+
+  def date_photo_path(user)
+    'elements/birth-dates/'+user.birthday.strftime("%m")+"/"+user.birthday.strftime("%d%m")+'.png'
+  end
 end
