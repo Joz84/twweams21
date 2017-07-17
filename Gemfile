@@ -34,9 +34,9 @@ gem 'country_select'
 gem 'cloudinary'
 gem 'attachinary'
 gem 'jquery-fileupload-rails'
+gem 'charly_dev', '~> 1.0.2'
 
 
 source 'https://rails-assets.org' do
   gem "rails-assets-underscore"
 end
-
