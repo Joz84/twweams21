@@ -22,4 +22,8 @@ module UserHelper
   def date_photo_path(user)
     'elements/birth-dates/'+user.birthday.strftime("%m")+"/"+user.birthday.strftime("%d%m")+'.png'
   end
+
+  def gender_type(user)
+    user.gender == 'male' ? 'color-men' : 'color-women'
+  end
 end

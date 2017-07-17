@@ -14,7 +14,7 @@
         <h1 class="playfair"><%= @user.full_name %></h1><br>
         <p id="birthday"><%= @user.birthday.strftime("%d/%m/%y") %></p><br>
         <p id="location"><%= @user.location %></p>
-        <%= link_to 'Messenger', root_path, id: 'messenger-btn', class: @user.gender == 'male' ? 'color-men' : 'color-women' %>
+        <%= link_to 'Messenger', root_path, id: 'messenger-btn', class: gender_type(@user) %>
       </div>
     </div>
     <div class="profile-right">
