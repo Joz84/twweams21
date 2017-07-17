@@ -6,9 +6,7 @@
         <%= image_tag 'elements/scotch.png', alt: 'scotch', id: "scotch"%>
         <%= link_to_edit(@user, default_image_tag( @user )) %>
       </div>
-      <div id="birthday-icon">
-        <%= image_tag date_photo_path(@user), alt: 'birthday-icon' %>
-      </div>
+      <%= image_tag date_photo_path(@user), alt: 'birthday-icon', id:"birthday-icon" %>
 
       <div id="info-list">
         <h1 class="playfair"><%= @user.full_name %></h1><br>
