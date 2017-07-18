@@ -87,11 +87,10 @@
         }
       }
       #birthday-icon {
-        transform: rotateZ(4deg);
-        margin:4em -7em 0 0;
-        img {
-          width:8.5em;
-        }
+          position: absolute;
+          transform: rotateZ(4deg) scale(0.7);
+          margin-top: 2.4em;
+          padding-right: 3.2em;
       }
     }
     .profile-right {
